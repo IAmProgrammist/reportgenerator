@@ -8,5 +8,6 @@ import java.util.List;
 public class Code {
     String header;
     String spec;
+    String funcName;
     List<String> parameters;
 }

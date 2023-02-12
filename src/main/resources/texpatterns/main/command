@@ -4,7 +4,7 @@
 %s
 
 %s
-
+\setmonofont{Consolas}
 \setmainfont{Times New Roman}
 
 \begin{document}

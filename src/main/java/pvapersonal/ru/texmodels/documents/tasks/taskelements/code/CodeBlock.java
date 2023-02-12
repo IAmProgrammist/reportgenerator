@@ -2,6 +2,10 @@ package pvapersonal.ru.texmodels.documents.tasks.taskelements.code;
 
 import pvapersonal.ru.texmodels.documents.tasks.taskelements.TaskElement;
 import pvapersonal.ru.texmodels.documents.text.Text;
+import pvapersonal.ru.utils.ContentReader;
+
+import java.io.File;
+import java.io.IOException;
 
 public class CodeBlock extends Text {
     String lang;
@@ -10,6 +14,10 @@ public class CodeBlock extends Text {
         super(code);
 
         this.lang = lang;
+    }
+
+    public CodeBlock(File code, String lang) throws IOException {
+        this(new Text(ContentReader.getFileContents(code.getAbsolutePath(), "\n", "\n").toString(), false), lang);
     }
 
     @Override

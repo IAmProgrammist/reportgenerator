@@ -39,6 +39,21 @@ public class Header extends TexElement {
         this.childTexElements.add(new Text());
     }
 
+    public Header(TexElement labNumber, TexElement labDisciplineName, TexElement labName,
+                  TexElement labExecutor, TexElement labTeacher, TexElement labYear) {
+        super();
+        this.commandArguments.set(Arguments.ARG_LAB_NUMBER.index, labNumber);
+        this.commandArguments.set(Arguments.ARG_DISCIPLINE_NAME.index, labDisciplineName);
+        this.commandArguments.set(Arguments.ARG_LAB_NAME.index, labName);
+        this.commandArguments.set(Arguments.ARG_LAB_EXECUTOR.index, labExecutor);
+        this.commandArguments.set(Arguments.ARG_LAB_TEACHER.index, labTeacher);
+        this.commandArguments.set(Arguments.ARG_LAB_REVIEWER.index, null);
+        this.commandArguments.set(Arguments.ARG_LAB_YEAR.index, labYear);
+
+        this.childTexElements.add(new TexBox());
+        this.childTexElements.add(new Text());
+    }
+
     @Override
     public String getTexPath() {
         return getClass().getResource("/texpatterns/header").getPath();
